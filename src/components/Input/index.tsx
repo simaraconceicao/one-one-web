@@ -7,7 +7,6 @@ import React, {
 } from 'react';
 import { IconBaseProps } from 'react-icons';
 import { FiAlertCircle } from 'react-icons/fi';
-
 import { useField } from '@unform/core';
 
 import { Container, Error } from './styles';
@@ -54,7 +53,7 @@ const Input: React.FC<Inputprops> = ({ name, icon: Icon, ...rest }) => {
         {...rest}
       />
       {error && (
-        <Error>
+        <Error title={error}>
           <FiAlertCircle color="c53030" size={20} />
         </Error>
       )}

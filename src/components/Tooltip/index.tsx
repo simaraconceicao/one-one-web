@@ -1,8 +1,17 @@
 import React from 'react';
 import { Container } from './styles';
 
-const Tooltip: React.FC = () => {
-  return <Container />;
+interface Tooltipprops {
+  title: string;
+  className?: string;
+}
+const Tooltip: React.FC<Tooltipprops> = ({ title, className, children }) => {
+  return (
+    <Container className={className}>
+      {children}
+      <span>{title}</span>
+    </Container>
+  );
 };
 
 export default Tooltip;
